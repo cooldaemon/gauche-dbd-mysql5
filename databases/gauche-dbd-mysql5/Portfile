@@ -1,0 +1,17 @@
+PortSystem 1.0
+name                gauche-dbd-mysql5
+version             0.2.2
+categories          databases scheme
+maintainers         cooldaemon@gmail.com
+description         Gauche database driver for MySQL5
+homepage            http://www.kahua.org/cgi-bin/kahua.fcgi/kahua-web/show/dev/DBI
+master_sites        http://www.kahua.org/download/dbi/
+distname            Gauche-dbd-mysql-${version}
+extract.suffix      .tgz
+checksums           md5 6ea0ba539b9bdd6dcfd53639dc630b36
+depends_build       bin:gauche-config:gauche bin:mysql_config:mysql5
+depends_lib         lib:libgauche:gauche port:mysql5 port:openssl port:zlib
+test.run            yes
+test.target         check
+destroot.destdir    prefix=${destroot}${prefix}
+
